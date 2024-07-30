@@ -1,0 +1,1 @@
+ /Users/gimjinhyeon/Desktop/project/gemini_project/front/.dart_tool/flutter_build/e05b1ded7193a372f48349e9b77729a9/native_assets.yaml: 
