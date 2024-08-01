@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
       Navigator.of(context).pushAndRemoveUntil(
         PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
-              const LoginScreen(),
+              LoginScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return child;
           },

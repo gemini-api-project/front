@@ -45,5 +45,16 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<!-- 로그인관련 -->
+	<key>CFBundleURLTypes</key>
+	<array>
+	<dict>
+		<key>CFBundleURLSchemes</key>
+		<array>
+		<string>com.googleusercontent.apps.919504330261-gonrtg9f98nchugtthqa30apc0bng0n2</string> <!-- 예: com.yourcompany.yourapp -->
+		</array>
+	</dict>
+	</array>
 </dict>
 </plist>
