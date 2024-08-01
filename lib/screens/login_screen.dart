@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/screens/home_screen.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,6 +29,11 @@ class LoginScreen extends ConsumerWidget {
                 backgroundColor: Colors.black, // GitHub 색상
               ),
             ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/home');
+                },
+                child: Icon(Icons.error))
           ],
         ),
       ),
@@ -38,14 +42,24 @@ class LoginScreen extends ConsumerWidget {
 
   // GitHub 로그인 메서드
   Future<void> _signInWithGitHub(BuildContext context) async {
+    await dotenv.load();
+    // 환경 변수 로드 확인
+    final clientId = dotenv.env['GITHUB_OAUTH_CLIENTID'];
+    final clientSecret = dotenv.env['GITHUB_OAUTH_CLIENTSECRET'];
+    final redirectUrl = dotenv.env['REDIRECTURL'];
+
+    if (clientId == null || clientSecret == null || redirectUrl == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('환경 변수를 로드할 수 없습니다. .env 파일을 확인하세요.')),
+      );
+      return;
+    }
+
     // GitHubSignIn 인스턴스 생성
     final GitHubSignIn gitHubSignIn = GitHubSignIn(
-      clientId:
-          '${dotenv.env['GITHUB_OAUTH_CLIENTID']}', // GitHub OAuth 클라이언트 ID
-      clientSecret:
-          '${dotenv.env['GITHUB_OAUTH_CLIENTSECRET']}', // GitHub OAuth 클라이언트 시크릿
-      redirectUrl:
-          '${dotenv.env['https://gemini-api-project-58d8c.firebaseapp.com/__/auth/handler']}', // 리다이렉트 URL
+      clientId: clientId,
+      clientSecret: clientSecret,
+      redirectUrl: redirectUrl,
     );
 
     // 로그인 프로세스 시작

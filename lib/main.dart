@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/home_screen.dart';
 import 'package:flutter_application/screens/login_screen.dart';
 import 'package:flutter_application/screens/splash_screen.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Flutter 엔진이 초기화될 때까지 기다림
   await Firebase.initializeApp(); // Firebase 초기화
+  await DotEnv().load(fileName: ".env");
   runApp(const MyApp());
 }
 
