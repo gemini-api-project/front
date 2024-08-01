@@ -63,6 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '919504330261',
     projectId: 'gemini-api-project-58d8c',
     storageBucket: 'gemini-api-project-58d8c.appspot.com',
+    iosClientId: '919504330261-gonrtg9f98nchugtthqa30apc0bng0n2.apps.googleusercontent.com',
     iosBundleId: 'student.developer.jinhyeon.flutterApplication',
   );
+
 }

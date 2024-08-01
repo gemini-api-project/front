@@ -12,7 +12,12 @@
           "package_name": "student.developer.jinhyeon"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "919504330261-3ver046gbamff20rmnmqkfqa92813jlh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBISUrLiCAwr9usAySqJt0hC7-iJkXQNVI"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "919504330261-3ver046gbamff20rmnmqkfqa92813jlh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "919504330261-gonrtg9f98nchugtthqa30apc0bng0n2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "student.developer.jinhyeon.flutterApplication"
+              }
+            }
+          ]
         }
       }
     }
