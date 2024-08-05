@@ -57,7 +57,6 @@ class LoginScreen extends ConsumerWidget {
       return;
     }
 
-    // GitHubSignIn 인스턴스 생성
     final GitHubSignIn gitHubSignIn = GitHubSignIn(
       clientId: clientId,
       clientSecret: clientSecret,
